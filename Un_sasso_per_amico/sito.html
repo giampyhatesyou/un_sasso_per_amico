@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendita di sassi</title>
+  <link rel="stylesheet" href="sito.css">
+</head>
+<body>
+  <header>
+    <h1>Un sasso per amico</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#prodotti">Prodotti</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <li>
+      <h2>Benvenuti nel nostro negozio di sassi</h2>
+      <p>Qui troverete una vasta selezione di sassi di ogni forma, dimensione e colore.</p>
+      <p>Scoprite la bellezza naturale dei nostri prodotti e portate a casa un pezzo unico della natura.</p>
+      </li>
+    </section>
+    <section id="prodotti">
+      <li>
+      <h2>Prodotti</h2>
+      <p>Di seguito potete trovare alcuni dei nostri prodotti più popolari.</p>
+      </li>
+      <br>
+      <ul>
+        <li onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D'">
+          <h3>Sasso di fiume</h3>
+          <img src="sasso-di-fiume.jpg" alt="Sasso di fiume">
+          <p>Questo sasso di fiume ha una forma arrotondata e una superficie liscia. Perfetto per la decorazione del giardino o come elemento d'arredo.</p>
+          <p>Prezzo: €10</p>
+        </li>
+        <li onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D'">
+          <h3>Sasso di montagna</h3>
+          <img src="sasso-di-montagna.jpg" alt="Sasso di montagna">
+          <p>Questo sasso di montagna ha una forma irregolare e una superficie ruvida. Ideale per la creazione di muri di pietra o come elemento decorativo.</p>
+          <p>Prezzo: €20</p>
+        </li>
+        <li onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D'">
+          <h3>Sasso di mare</h3>
+          <img src="sasso-di-mare.jpg" alt="Sasso di mare">
+          <p>Questo sasso di mare ha una forma ovale e una superficie levigata dall'azione delle onde. Perfetto per la creazione di mosaici o come elemento decorativo.</p>
+          <p>Prezzo: €5</p>
+        </li>
+        <li>
+          <h3>Prossimamente</h3>
+          <img src="prossimamente.jpg" alt="Prossimamente">
+          <p>Stiamo lavorando a un nuovo prodotto che presto sarà disponibile nel nostro negozio. Restate sintonizzati per maggiori informazioni!</p>
+          <p>Prezzo: da definire</p>
+        </li>
+      </ul>
+    </section>
+    <section id="ruota">
+      <li>
+      <h2>Gira la ruota e ottieni uno sconto!</h2>
+      <div id="ruota-container">
+        <img id="ruota-img" src="ruota.png" alt="Ruota degli sconti">
+        <button id="ruota-btn">Gira la ruota</button>
+      </div>
+      <p id="ruota-msg"></p>
+      </li>
+    </section>
+    <section id="contatti">
+      <li>
+      <h2>Contatti</h2>
+      <p>Per qualsiasi informazione o richiesta, non esitate a contattarci:</p>
+      <ul>
+        <li><strong>Indirizzo:</strong> Via dei Sassi, 123 - 00100 Roma</li>
+        <li><strong>Telefono:</strong> 06 1234567</li>
+        <li><strong>Email:</strong> info@sassinaturali.it</li>
+      </ul>
+      <form action="invia-email.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="messaggio">Messaggio:</label>
+        <textarea id="messaggio" name="messaggio" required></textarea>
+        <button type="submit">Invia</button>
+      </form>
+      </li>
+    </section>
+  </main>
+  <script>
+    // Seleziona gli elementi della ruota
+    const ruotaImg = document.getElementById("ruota-img");
+    const ruotaBtn = document.getElementById("ruota-btn");
+    const ruotaMsg = document.getElementById("ruota-msg");
+
+    // Imposta gli angoli di rotazione della ruota
+    const angoli = [0, 45, 90, 135, 180, 225, 270, 315];
+
+    // Aggiungi l'evento di click al pulsante "Gira la ruota"
+    ruotaBtn.addEventListener("click", () => {
+      // Genera un valore casuale di sconto
+      const sconto = Math.floor(Math.random() * 101);
+
+      // Calcola l'angolo di rotazione della ruota
+      const angolo = angoli[Math.floor(Math.random() * angoli.length)];
+
+      // Visualizza il messaggio di sconto ottenuto
+      ruotaMsg.textContent = `Complimenti! Hai ottenuto uno sconto del ${sconto}%`;
+
+      // Ruota la ruota degli sconti
+      ruotaImg.style.transform = `rotate(${angolo}deg)`;
+    });
+  </script>
+</body>
+</html>
